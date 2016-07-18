@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.1.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1510</x>
+      <y>0</y>
+      <w>270</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>/GameObject/
+--
+#name: std::string
+#description: std::string
+#own_id: size_t
+--
++GameObject()
+/+~GameObject()/
++get_name(out: std::string&amp;): size_t
++get_description(out: std::string&amp;): size_t
++get_own_id(result: size_t&amp;): size_t
++set_name(value: std::string): size_t
++set_description(value: std::string): size_t
++set_own_id(value: size_t): size_t
+/+what(out: std::string&amp;): size_t/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1020</x>
+      <y>270</y>
+      <w>370</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>/Place/
+--
+#visitors: std::vector&lt;size_t&gt;
+--
++Place()
+/+~Place()/
+/+whos_there(here: std::vector&lt;size_t&gt;&amp;):size_t/
+/+enter(some_args_there): size_t/
++get_visitor_id(visitor_index: size_t): size_t
++get_visitor_ids(result: std::vector&lt;size_t&gt;&amp;): size_t
++set_visitor_id(value: size_t, visitor_index: size_t): size_t  
++set_visitor_ids(values: std::vector&lt;size_t&gt;): size_t</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1190</x>
+      <y>220</y>
+      <w>470</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>450.0;10.0;450.0;40.0;10.0;40.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>660</x>
+      <y>580</y>
+      <w>360</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>/Building/
+--
+#number: size_t
+#employees: std::vector&lt;size_t&gt;
+#professions: std::vector&lt;size_t&gt;
+--
++Building()
+/+~Building()/
++get_number(result: size_t): size_t
++set_number(value: size_t): size_t
++get_employee_id(employee_index: size_t): size_t
++get_employee_ids(result: std::vector&lt;size_t&gt;&amp;): size_t
++set_employee_id(value: size_t, index: size_t): size_t
++set_employee_ids(value: std::vector&lt;size_t&gt;): size_t
++get_profession_id(profession_index: size_t): size_t
++get_profession_ids(result: std::vector&lt;size_t&gt;&amp;): size_t
++set_profession_id(value: size_t, index: size_t): size_t
++set_profession_ids(value: std::vector&lt;size_t&gt;): size_t</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>830</x>
+      <y>450</y>
+      <w>390</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>370.0;10.0;370.0;110.0;10.0;110.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>140</x>
+      <y>900</y>
+      <w>360</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>/LivingHouse/
+--
+#inhabitants: std::vector&lt;size_t&gt;
+--
++LivingHouse()
+/+~LivingHouse()/
+/+get_inhabiitant_id(inhabitant_index: size_t): size_t/
+/+get_inhabitant_ids(result: std::vector&lt;size_t&gt;&amp;): size_t/
+/+set_inhabitant_id(value: size_t, index: size_t): size_t/
+/+set_inhabitant_ids(value: std::vector&lt;size_t&gt;): size_t/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>920</x>
+      <y>900</y>
+      <w>350</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>/Facility/
+--
+#partners: std::vector&lt;size_t&gt;
+--
++Facility()
+/+~Facility()/
++get_partners_ids(result: std::vector&lt;size_t&gt;&amp;): size_t
++get_partners_id(index: size_t, result: size_t&amp;): size_t
++set_partners_ids(value: std::vector&lt;size_t&gt;): size_t
++set_partners_id(index: size_t, value: size_t): size_t</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>1110</y>
+      <w>310</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>Mansion
+--
+--
++Mansion()
+/+~Mansion()/
++whos_there(here: std::vector&lt;size_t&gt;&amp;): size_t
++what(out: std::string&amp;): szie_t</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>340</x>
+      <y>1110</y>
+      <w>320</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>CommonHouse
+--
+#rooms: std::vector&lt;Room*&gt;
+--
++CommonHouse()
+/+~CommonHouse()/
++get_rooms_count(result: size_t&amp;): size_t
++get_room(result: Room*&amp;, index: size_t): size_t
++get_rooms(result: std::vector&lt;Room*&gt;&amp;): size_t
++set_rooms(value: std::vector&lt;Room*&gt;): size_t
++set_room(value: Room*, index: size_t): size_t
++add_room(new_room: Room*): size_t
++remove_room(index: size_t): size_t
++whos_there(here: std::vector&lt;size_t&gt;&amp;): size_t
++what(out: std::string&amp;): size_t</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>310</x>
+      <y>850</y>
+      <w>550</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>530.0;10.0;530.0;30.0;10.0;30.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>140</x>
+      <y>1040</y>
+      <w>200</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>180.0;10.0;180.0;40.0;10.0;40.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>310</x>
+      <y>1060</y>
+      <w>200</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;180.0;20.0;180.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>830</x>
+      <y>860</y>
+      <w>310</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;290.0;20.0;290.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>700</x>
+      <y>1110</y>
+      <w>450</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>ProducingFacility
+--
+#goods: std::vector&lt;std::pair&lt;size_t, size_t&gt; &gt;
+--
++Workshop()
+/+~Workshop()/
++get_goods_id(goods_index: size_t):: size_t
++get_goods_ids(result: std::vector&lt;std::pair&lt;size_t, size_t&gt; &gt;&amp;): size_t
++set_goods_id(value: size_t, index: size_t): size_t
++set_goods_ids(value:std::vector&lt;std::pair&lt;size_t, size_t&gt; &gt;): size_t
++produce_goods(index: size_t, amount: size_t): size_t
++export_goods(index: size_t, amount: size_t): size_t</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>910</x>
+      <y>1040</y>
+      <w>230</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>210.0;10.0;210.0;40.0;10.0;40.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1190</x>
+      <y>1110</y>
+      <w>340</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>ServiceFacility
+--
+#clients: std::vector&lt;size_t&gt;
+--
++ServiceFacility()
+/+~ServiceFacility()/
++get_clients_ids(result: std::vector&lt;size_t&gt;&amp;): size_t
++get_clients_id(index: size_t, result: size_t&amp;): size_t
++set_clients_ids(value: std::vector&lt;size_t&gt;): size_t
++set_clients_id(index: size_t, value: size_t): size_t</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1110</x>
+      <y>1060</y>
+      <w>270</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;250.0;20.0;250.0;50.0</additional_attributes>
+  </element>
+</diagram>
