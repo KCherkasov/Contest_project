@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1510</x>
-      <y>190</y>
+      <x>1810</x>
+      <y>0</y>
       <w>270</w>
       <h>230</h>
     </coordinates>
@@ -29,14 +29,15 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1020</x>
-      <y>460</y>
+      <x>1320</x>
+      <y>270</y>
       <w>370</w>
       <h>190</h>
     </coordinates>
     <panel_attributes>/Place/
 --
 #visitors: std::vector&lt;size_t&gt;
+#encounters: std::vector&lt;std::pair&lt;size_t, size_t&gt; &gt;
 --
 +Place()
 /+~Place()/
@@ -51,8 +52,8 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1190</x>
-      <y>410</y>
+      <x>1490</x>
+      <y>220</y>
       <w>470</w>
       <h>70</h>
     </coordinates>
@@ -62,8 +63,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>660</x>
-      <y>770</y>
+      <x>960</x>
+      <y>580</y>
       <w>360</w>
       <h>280</h>
     </coordinates>
@@ -90,8 +91,8 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>830</x>
-      <y>640</y>
+      <x>1130</x>
+      <y>450</y>
       <w>390</w>
       <h>150</h>
     </coordinates>
@@ -101,8 +102,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>140</x>
-      <y>1090</y>
+      <x>440</x>
+      <y>900</y>
       <w>360</w>
       <h>150</h>
     </coordinates>
@@ -121,8 +122,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>920</x>
-      <y>1090</y>
+      <x>1220</x>
+      <y>900</y>
       <w>350</w>
       <h>150</h>
     </coordinates>
@@ -141,8 +142,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>1300</y>
+      <x>300</x>
+      <y>1110</y>
       <w>310</w>
       <h>140</h>
     </coordinates>
@@ -158,8 +159,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>340</x>
-      <y>1300</y>
+      <x>640</x>
+      <y>1110</y>
       <w>320</w>
       <h>230</h>
     </coordinates>
@@ -183,8 +184,8 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>310</x>
-      <y>1040</y>
+      <x>610</x>
+      <y>850</y>
       <w>550</w>
       <h>70</h>
     </coordinates>
@@ -194,8 +195,8 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>140</x>
-      <y>1230</y>
+      <x>440</x>
+      <y>1040</y>
       <w>200</w>
       <h>90</h>
     </coordinates>
@@ -205,8 +206,8 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>310</x>
-      <y>1250</y>
+      <x>610</x>
+      <y>1060</y>
       <w>200</w>
       <h>70</h>
     </coordinates>
@@ -216,8 +217,8 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>830</x>
-      <y>1050</y>
+      <x>1130</x>
+      <y>860</y>
       <w>310</w>
       <h>60</h>
     </coordinates>
@@ -227,8 +228,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>700</x>
-      <y>1300</y>
+      <x>1000</x>
+      <y>1110</y>
       <w>450</w>
       <h>180</h>
     </coordinates>
@@ -249,8 +250,8 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>910</x>
-      <y>1230</y>
+      <x>1210</x>
+      <y>1040</y>
       <w>230</w>
       <h>90</h>
     </coordinates>
@@ -260,8 +261,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1190</x>
-      <y>1300</y>
+      <x>1490</x>
+      <y>1110</y>
       <w>340</w>
       <h>150</h>
     </coordinates>
@@ -280,12 +281,270 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1110</x>
-      <y>1250</y>
+      <x>1410</x>
+      <y>1060</y>
       <w>270</w>
       <h>70</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;20.0;250.0;20.0;250.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>20</x>
+      <y>20</y>
+      <w>560</w>
+      <h>510</h>
+    </coordinates>
+    <panel_attributes>bg=green
+/*
+Реализация через указатель (можно создавать и удалять когда мы этого хотим)
+*/
+ServiceFacility* service_facility = new ServiceFacility();
+std::vector&lt;size_t&gt; vector;
+if (service_facility != NULL) {
+  service_facility-&gt;get_visitor_ids(vector);
+}
+ServiceFacility* pointer2 = NULL;
+pointer2 = service_facility;
+delete service_facility;
+
+--
+/*
+Реализация без указателя (будет жить до окончания работы блока где был создан)
+*/
+ServiceFacility service_facility();
+
+--
+Пример "заглушки"
+
+size_t dead_end() {
+  return 0;
+}
+
+--
+size_t Place::get_visitor_id(visitor_index: size_t) {
+  return 0;
+}
+
+size_t  Building::get_visitor_id(visitor_index size_t) {
+  return _visitors[visitor_index];
+}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1590</x>
+      <y>580</y>
+      <w>240</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>/Street/
+--
+#buildings: std::vector&lt;Building*&gt;
+#oustides: std::vector&lt;Outside*&gt;
+#connections: std::vector&lt;Street*&gt;
+--
++Street()
+/+~Street()/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1490</x>
+      <y>540</y>
+      <w>310</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;290.0;20.0;290.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2000</x>
+      <y>580</y>
+      <w>100</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>/Outside/
+--
+--
++Outside()
++~Oustide()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2040</x>
+      <y>690</y>
+      <w>30</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2000</x>
+      <y>750</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Avenue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2270</x>
+      <y>750</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Sewers</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1820</x>
+      <y>600</y>
+      <w>200</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=0..*</panel_attributes>
+    <additional_attributes>10.0;10.0;180.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1310</x>
+      <y>600</y>
+      <w>300</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=0..*</panel_attributes>
+    <additional_attributes>280.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1680</x>
+      <y>390</y>
+      <w>190</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1850</x>
+      <y>390</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>District</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1700</x>
+      <y>410</y>
+      <w>220</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>200.0;10.0;200.0;110.0;10.0;110.0;10.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2110</x>
+      <y>290</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>City</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1940</x>
+      <y>310</y>
+      <w>240</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>220.0;10.0;220.0;90.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1770</x>
+      <y>540</y>
+      <w>310</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;290.0;20.0;290.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1930</x>
+      <y>240</y>
+      <w>250</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;230.0;20.0;230.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2150</x>
+      <y>240</y>
+      <w>440</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;420.0;20.0;420.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2510</x>
+      <y>290</y>
+      <w>120</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>/AliveGameObject/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2040</x>
+      <y>710</y>
+      <w>310</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;290.0;20.0;290.0;40.0</additional_attributes>
   </element>
 </diagram>
